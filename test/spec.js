@@ -21,18 +21,21 @@ describe('Our App', () => {
 	describe('movies api', () => {
 		it('returns 4 movies', async () => {
 			const movies = await app.get('/api/movies');
+			expect(movies.status).to.equal(200);
 			expect(movies.body.length).to.equal(4);
 		});
 	});
 	describe('actors api', () => {
 		it('returns 5 actors', async () => {
 			const actors = await app.get('/api/actors');
+			expect(actors.status).to.equal(200);
 			expect(actors.body.length).to.equal(5);
 		});
 	});
 	describe('roles api', () => {
 		it('returns 5 roles', async () => {
 			const roles = await app.get('/api/roles');
+			expect(roles.status).to.equal(200);
 			expect(roles.body.length).to.equal(6);
 		});
 	});
